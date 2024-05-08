@@ -21,9 +21,27 @@ export class ApplicationRoot extends PIXI.Container {
 
         this.init();
         this.flip();
-        this.addChild(new SliderUI(app));
+        this.slide1 = this.addChild(new SliderUI(app, 640, -50, 50));
+        this.slide1.y = 600;
+
+        this.slide2 = this.addChild(new SliderUI(app, 640, -50, 50));
+        this.slide2.y = 800;
+
+        this.slide3 = this.addChild(new SliderUI(app, 640, 0, 360));
+        this.slide3.y = 1000;
+
+        gsap.ticker.add(() => this.onTick());
     }
- 
+    
+    onTick(){
+        let val1 = PIXI.DEG_TO_RAD * this.slide1.val;
+        let val2 = PIXI.DEG_TO_RAD * this.slide2.val;
+        let val3 = PIXI.DEG_TO_RAD * this.slide3.val;
+        this.container.skew.x = val1;
+        this.container.skew.y = val2;
+        this.container.rotation = val3
+    }
+
     init() {
         this.target = new ExPixiContainer();
         this.gra = GraphicsHelper.exDrawRect(0, 0, this.boxRect.width, this.boxRect.height, {color:0xFFFFFF, width:1}, {color:0x000000});
@@ -43,7 +61,7 @@ export class ApplicationRoot extends PIXI.Container {
     }
 
     flip(){
-        let val = PIXI.DEG_TO_RAD * 10;
+        // let val = PIXI.DEG_TO_RAD * 10;
         // this.container.skew.x = val;
         // let tl = gsap.timeline();
         // tl.to(this.container.skew, {y:val, x:val, duration:1.2, ease:'circ.inOut'});
