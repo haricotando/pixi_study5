@@ -39,7 +39,7 @@ function init(){
         resizeTo: window
     });
     document.body.appendChild(app.view);
-    dataProvider.data.app = app;
+    dataProvider.app = app;
 
     // AlignHelper.lockedScreenWidth = dataProvider.wWidth;
     // AlignHelper.lockedScreenHeight = dataProvider.wHeight;
