@@ -1,4 +1,4 @@
-import { ApplicationRoot } from './ApplicationRoot.js';
+import { CaseSliderUI } from './CaseSliderUI.js';
 import { dataProvider } from './dataProvider.js';
 // import Utils from './helper/Utils.js';
 // import AlignHelper from './helper/AlignHelper.js';
@@ -44,7 +44,7 @@ function init(){
     // AlignHelper.lockedScreenWidth = dataProvider.wWidth;
     // AlignHelper.lockedScreenHeight = dataProvider.wHeight;
     
-    const applicationRoot = new ApplicationRoot(app);
+    const applicationRoot = new CaseSliderUI(app);
     app.stage.addChild(applicationRoot);
 }
 

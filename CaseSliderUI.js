@@ -5,7 +5,7 @@ import GraphicsHelper from './helper/GraphicsHelper.js';
 import Utils from './helper/Utils.js';
 
 
-export class ApplicationRoot extends PIXI.Container {
+export class CaseSliderUI extends PIXI.Container {
 
     /* ============================================================
         constructor
@@ -16,7 +16,10 @@ export class ApplicationRoot extends PIXI.Container {
         this.boxRect = {width:400, height:300}
         
         this.container = this.addChild(new ExPixiContainer());
+        this.container.pivot.set(app.screen.width/2, app.screen.height/2)
         const grid = this.container.addChild(Utils.drawGrid(98));
+        this.container.x = app.screen.width / 2;
+        this.container.y = app.screen.height / 2;
         grid.alpha = 0.5;
 
         this.init();
