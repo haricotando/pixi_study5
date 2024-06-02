@@ -1,5 +1,5 @@
 // import { CaseRiseOfPanda } from './CaseRiseOfPanda.js';
-// import { CaseSliderUI } from './CaseSliderUI.js';
+import { CaseSliderUI } from './CaseSliderUI.js';
 import { CaseStarField } from './CaseStarField.js';
 // import { CaseSliderUI } from './CaseSliderUI.js';
 // import { CaseTintColor } from './CaseTintColor.js';
@@ -48,9 +48,9 @@ function init(){
     // AlignHelper.lockedScreenWidth = dataProvider.wWidth;
     // AlignHelper.lockedScreenHeight = dataProvider.wHeight;
     
-    // const applicationRoot = new CaseSliderUI(app);
+    const applicationRoot = new CaseSliderUI(app);
     // // const applicationRoot = new CaseRiseOfPanda(app);
-    const applicationRoot = new CaseStarField(app);
+    // const applicationRoot = new CaseStarField(app);
     app.stage.addChild(applicationRoot);
 }
 

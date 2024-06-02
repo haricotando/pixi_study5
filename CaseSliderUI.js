@@ -1,3 +1,4 @@
+import { CaseStarField } from './CaseStarField.js';
 import { SliderUI } from './SliderUI.js';
 import { ExPixiContainer } from './class/ExPixiContainer.js';
 import { dataProvider } from './dataProvider.js';
@@ -20,7 +21,10 @@ export class CaseSliderUI extends PIXI.Container {
         const grid = this.container.addChild(Utils.drawGrid(98));
         this.container.x = app.screen.width / 2;
         this.container.y = app.screen.height / 2;
-        grid.alpha = 0.5;
+        grid.alpha = 0;
+
+        const star = new CaseStarField(app);
+        this.container.addChild(star);
 
         this.init();
         this.flip();
